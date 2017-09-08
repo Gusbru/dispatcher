@@ -10,4 +10,5 @@ void messageEnterValue();
 void printList(node*);
 int addBegin(node**, int);
 int addEnd(node**, int);
+int clearList(node**);
 #endif //DISPATCHER_UTILS_H

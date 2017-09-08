@@ -36,7 +36,7 @@ int main() {
                 printList(head);
                 break;
             case 4:
-                //clearList(head);
+                clearList(&head);
                 break;
             case 0:
                 cout << "Good bye!" << endl;

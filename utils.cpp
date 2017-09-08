@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void messageEnterValue(){
+void messageEnterValue() {
     cout << "\nEnter the value of the element:" << endl;
 }
 
@@ -16,18 +16,18 @@ void messageEnterValue(){
  *
  * @*head pointer to the first element of the liked list
  */
-void printList(node* head){
+void printList(node *head) {
 
     // empty list
-    if(head == nullptr) {
+    if (head == nullptr) {
         cout << "Empty list." << endl;
         return;
     }
 
     // not empty list
     node *current = head;
-    while (current != nullptr){
-        cout << current->val << " " ;
+    while (current != nullptr) {
+        cout << current->val << " ";
         current = current->next;
     }
     cout << endl;
@@ -40,7 +40,7 @@ void printList(node* head){
  * @**head pointer to a pointer to the first element of the list
  * @val an integer value to be given to the first element
  */
-int addBegin(node** head, int val){
+int addBegin(node **head, int val) {
 
     // list is empty
     if ((*head) == nullptr) {
@@ -61,10 +61,16 @@ int addBegin(node** head, int val){
     return 0;
 }
 
-int addEnd(node** head, int val) {
+/*
+ * Add an element in the end of the list
+ *
+ * @**head first element of the list
+ * @val value to be added
+ */
+int addEnd(node **head, int val) {
 
     // empty list
-    if((*head) == nullptr){
+    if ((*head) == nullptr) {
         (*head) = new node;
         (*head)->val = val;
         (*head)->next = nullptr;
@@ -75,7 +81,7 @@ int addEnd(node** head, int val) {
     // list is not empty
     node *current = (*head);
 
-    while(current->next != nullptr){
+    while (current->next != nullptr) {
         current = current->next;
     }
 
@@ -84,4 +90,26 @@ int addEnd(node** head, int val) {
     current->next->next = nullptr;
 
     return 0;
+}
+
+int clearList(node **head) {
+
+    // empty list
+    if ((*head) == nullptr) {
+        cout << "List already empty" << endl;
+        return 0;
+    }
+
+    // not empty list
+    node *current = (*head);
+    node *next = nullptr;
+    while (current != nullptr) {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+    (*head) = nullptr;
+
+    return 0;
+
 }
