@@ -40,6 +40,9 @@ int main() {
             case 4:
                 clearList(&head);
                 break;
+            case 5:
+                cout << "You removed the first element with value " << removeFirst(&head) << endl;
+                break;
             case 9:
                 do {
                     menuAdvanced();

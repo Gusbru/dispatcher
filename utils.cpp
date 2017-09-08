@@ -136,3 +136,33 @@ int numberOfEven(node* head){
     }
     return count;
 }
+
+/*
+ * Remove the first element from a list and return its value.
+ * If the list is empty return -1
+ *
+ * @**head first element of a list
+ * @return the value of the first element
+ */
+int removeFirst(node** head){
+
+    // empty list
+    if ((*head) == nullptr){
+        return -1;
+    }
+
+    // list with a single element
+    if ((*head)->next == nullptr){
+        int val = (*head)->val;
+        free((*head));
+        (*head) = nullptr;
+        return val;
+    }
+
+    // list with 2 or more elements
+    node *current = (*head)->next;
+    int val = (*head)->val;
+    free((*head));
+    (*head) = current;
+    return val;
+}
