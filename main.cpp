@@ -26,20 +26,18 @@ int main() {
                 cin >> val;
                 addBegin(&head, val);
                 break;
+            case 3:
+                printList(head);
+                break;
             case 0:
                 cout << "Good bye!" << endl;
                 quit = true;
+                break;
             default:
                 cout << "Option not valid. Try again." << endl;
                 break;
         }
     } while(!quit);
-
-    printList(head);
-
-    printList(head);
-    addBegin(&head, 3);
-    printList(head);
 
 
     return 0;
