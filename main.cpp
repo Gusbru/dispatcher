@@ -10,8 +10,10 @@ using namespace std;
 int main() {
 
     // menu variables
-    bool quit = false;
+    bool quitMainMenu = false;
+    bool quitAdvMenu = false;
     int userOption;
+    int userOptionAdv;
     int val;
 
     // initialize an empty list
@@ -38,15 +40,29 @@ int main() {
             case 4:
                 clearList(&head);
                 break;
+            case 9:
+                do {
+                    menuAdvanced();
+                    cin >> userOptionAdv;
+                    switch (userOptionAdv){
+                        case 0:
+                            quitAdvMenu = true;
+                            break;
+                        default:
+                            cout << "Option not valid. Try again." << endl;
+                            break;
+                    }
+                } while(!quitAdvMenu);
+                break;
             case 0:
                 cout << "Good bye!" << endl;
-                quit = true;
+                quitMainMenu = true;
                 break;
             default:
                 cout << "Option not valid. Try again." << endl;
                 break;
         }
-    } while(!quit);
+    } while(!quitMainMenu);
 
 
     return 0;

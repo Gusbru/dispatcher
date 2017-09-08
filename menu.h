@@ -5,4 +5,5 @@
 #ifndef DISPATCHER_MENU_H
 #define DISPATCHER_MENU_H
 void menu();
+void menuAdvanced();
 #endif //DISPATCHER_MENU_H
