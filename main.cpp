@@ -45,6 +45,9 @@ int main() {
                     menuAdvanced();
                     cin >> userOptionAdv;
                     switch (userOptionAdv){
+                        case 1:
+                            cout << "The list have " << numberOfEven(head) << " even elements" << endl;
+                            break;
                         case 0:
                             quitAdvMenu = true;
                             break;

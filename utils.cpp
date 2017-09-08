@@ -92,6 +92,11 @@ int addEnd(node **head, int val) {
     return 0;
 }
 
+/*
+ * Clear all elements from a list
+ *
+ * @**head the first element of a list
+ */
 int clearList(node **head) {
 
     // empty list
@@ -112,4 +117,22 @@ int clearList(node **head) {
 
     return 0;
 
+}
+
+/*
+ * Count the number of even elements in a list
+ *
+ * @*head first element of the list
+ * @return the number of even elements
+ */
+int numberOfEven(node* head){
+    node *current = head;
+    int count = 0;
+    while (current != nullptr){
+        if(current->val % 2 == 0) {
+            count += 1;
+        }
+        current = current->next;
+    }
+    return count;
 }
