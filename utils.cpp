@@ -7,9 +7,12 @@
 
 using namespace std;
 
+void messageEnterValue(){
+    cout << "\nEnter the value of the element:" << endl;
+}
+
 /*
- * Given a Linked List (node type) print all the
- * elements in the list
+ * Given a Linked List (node type) print all the elements in the list
  *
  * @*head pointer to the first element of the liked list
  */
@@ -32,8 +35,7 @@ void printList(node* head){
 
 
 /*
- * Given a linked list (type node) add an element
- * at the beginning of the list
+ * Given a linked list (type node) add an element at the beginning of the list
  *
  * @**head pointer to a pointer to the first element of the list
  * @val an integer value to be given to the first element
@@ -55,6 +57,31 @@ int addBegin(node** head, int val){
     new_element->next = (*head);
     new_element->val = val;
     (*head) = new_element;
+
+    return 0;
+}
+
+int addEnd(node** head, int val) {
+
+    // empty list
+    if((*head) == nullptr){
+        (*head) = new node;
+        (*head)->val = val;
+        (*head)->next = nullptr;
+
+        return 0;
+    }
+
+    // list is not empty
+    node *current = (*head);
+
+    while(current->next != nullptr){
+        current = current->next;
+    }
+
+    current->next = new node;
+    current->next->val = val;
+    current->next->next = nullptr;
 
     return 0;
 }

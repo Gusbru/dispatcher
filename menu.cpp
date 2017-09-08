@@ -19,6 +19,7 @@ void menu() {
                  "* 1. Insert an element at begin of the list    *\n"
                  "* 2. Insert an element in the end of the list  *\n"
                  "* 3. Print the list values                     *\n"
+                 "* 4. Clear the list                            *\n"
                  "* 0. Exit                                      *\n"
                  "*                                              *\n"
                  "************************************************\n"

@@ -6,7 +6,8 @@
 #define DISPATCHER_UTILS_H
 #include "main.h"
 
-
+void messageEnterValue();
 void printList(node*);
 int addBegin(node**, int);
+int addEnd(node**, int);
 #endif //DISPATCHER_UTILS_H
